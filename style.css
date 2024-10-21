@@ -61,3 +61,31 @@ body {
 .player_constrols > i:hover {
     color: #17e417;
 }
+.playlist {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.card {
+    width: 18rem;
+    height: 28rem;
+    border-radius: 10px;
+    background-color: darkgray;
+    box-shadow: 4px 4px 5px #012b61;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+
+.card:hover {
+    background-color: #e0e0e0; 
+}
+
+.card img {
+    width: 100%; 
+    border-radius:5px;
+}
+
