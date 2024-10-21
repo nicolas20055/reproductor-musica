@@ -4,15 +4,11 @@ const pause = document.getElementById('pause');
 const forward = document.getElementById('forward');
 const rewind = document.getElementById('rewind');
 const stop = document.getElementById('stop');
+const playerArtist = document.getElementById('player__artist');
+const playerSong = document.getElementById('player__song');
+const siguiente = document.getElementById('next');
 
-play.addEventListener('click', () => audio.play());
-pause.addEventListener('click', () => audio.pause());
-rewind.addEventListener('click', () => audio.currentTime -= 10);
-forward.addEventListener('click', () => audio.currentTime += 10);
-stop.addEventListener('click', () => {
-    audio.pause();
-    audio.currentTime = 0;
-});
+let currentSongIndex = 0; 
 
 const playList = [
     {
@@ -46,21 +42,52 @@ const playList = [
         song: 'music/y2mate.com - Oh Qué Será.mp3'
     },
 ];
-let currentSongIndex = 0; 
 
-
-function playSong(song) {
-    const audio = document.getElementById("audio");
-    audio.src = song.src; 
-    audio.play(); 
-}
-
-
-function nextSong() {
-    currentSongIndex++; 
-    if (currentSongIndex >= playList.length) {
-        currentSongIndex = 0; 
-    }
-    playSong(playList[currentSongIndex]); 
-}
-document.getElementById("next").addEventListener("click", nextSong);
+// Función para cargar una canción según el índice
+function loadSong(songIndex) {
+    const song = playList[songIndex];
+    audio.src = song.song;
+    playerArtist.textContent = song.artist;
+    playerSong.textContent = song.title;
+    albumImage.src = song.img;
+  }
+  
+  // Función para reproducir la canción actual
+  function playSong() {
+    audio.play();
+  }
+  
+  // Función para pausar la canción actual
+  function pauseSong() {
+    audio.pause();
+  }
+  
+  // Función para detener la canción actual (pausa y reinicia)
+  function stopSong() {
+    audio.pause();
+    audio.currentTime = 0;
+  }
+  
+  // Función para avanzar a la siguiente canción en la lista
+  function nextSong() {
+    currentSongIndex = (currentSongIndex + 1) % playList.length;
+    loadSong(currentSongIndex);
+    playSong();
+  }
+  
+  // Función para retroceder a la canción anterior en la lista
+  function previousSong() {
+    currentSongIndex = (currentSongIndex - 1 + playList.length) % playList.length;
+    loadSong(currentSongIndex);
+    playSong();
+  }
+  
+  // Cargar la primera canción al iniciar
+  loadSong(currentSongIndex);
+  
+  // Listeners para los controles
+  play.addEventListener('click', playSong);
+  pause.addEventListener('click', pauseSong);
+  stop.addEventListener('click', stopSong);
+  forward.addEventListener('click', nextSong);
+  rewind.addEventListener('click', previousSong);
