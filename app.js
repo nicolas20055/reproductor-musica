@@ -57,7 +57,7 @@ function loadSong(songIndex) {
   function playSong() {
     audio.play();
   }
-  l
+  
   function pauseSong() {
     audio.pause();
   }
