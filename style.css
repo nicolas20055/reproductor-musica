@@ -12,7 +12,6 @@ body {
     align-items: center;
     background: url();
 }
-
 .container-player {
     width: 18rem;
     height: 28rem;
@@ -53,14 +52,16 @@ body {
     justify-content: space-around;
 }
 
-.controls > audio {
-    width:100%;
-    height:2rem;
-    margin-top:1rem;
+.controls>audio {
+    width: 100%;
+    height: 2rem;
+    margin-top: 1rem;
 }
-.player_constrols > i:hover {
+
+.player_constrols>i:hover {
     color: #17e417;
 }
+
 .playlist {
     display: flex;
     flex-direction: column;
@@ -81,11 +82,10 @@ body {
 }
 
 .card:hover {
-    background-color: #e0e0e0; 
+    background-color: #e0e0e0;
 }
 
 .card img {
-    width: 100%; 
-    border-radius:5px;
+    width: 100%;
+    border-radius: 5px;
 }
-

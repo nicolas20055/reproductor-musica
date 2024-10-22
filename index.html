@@ -1,36 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  <link rel="stylesheet" href="style.css">
-  <title>Reproductor</title>
-</head>
-<div class="container-player">
-<body>
-    <h1>Play Music</h1>        
+  
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <title>Reproductor</title>
+  </head>
+  <div class="container-player">
+    
+    <body>
+      
+      <h1>Play Music</h1>
+      
     <div class="container-album">
-      <img src="images\Arcángel.png" alt="album" class="player__img">
-      <h2 class="player__artist">arcangel</h2>
-      <h3 class="player__song">La maravilla</h3>
-    </div>    
+      <img src="" type="png" alt="album" class="player__img" id="albumImage">
+      <h2 class="player__artist" id="player__artist">arcangel</h2>
+      <h3 class="player__song" id="player__song">La maravilla</h3>
+    </div>
     <div class="controls">
       <audio class="player__audio" controls id="audio">
         <source src="music\y2mate.com - Bonita.mp3" type="audio/mpeg">
       </audio>
       <div class="player_controls">
         <div class="player_controls">
-            <i class='bx bx-rewind' id="rewind"></i>        
-            <i class='bx bx-play' id="play"></i>
-            <i class='bx bx-stop' id="stop"></i> 
-            <i class='bx bx-pause' id="pause"></i>
-            <i class='bx bx-fast-forward' id="forward" id="next"></i>  
+          <i class='bx bx-rewind' id="rewind"></i>
+          <i class='bx bx-play' id="play"></i>
+          <i class='bx bx-stop' id="stop"></i>
+          <i class='bx bx-pause' id="pause"></i>
+          <i class='bx bx-fast-forward' id="forward" id="next"></i>
+          
+      
+          
         </div>
       </div>
     </div>
   </div>
-
-  <script src="app.js"></script>                    
+  <script src="app.js"></script>
 </body>
+
 </html>
