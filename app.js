@@ -86,6 +86,6 @@ function loadSong(songIndex) {
   play.addEventListener('click', playSong);
   pause.addEventListener('click', pauseSong);
   stop.addEventListener('click', stopSong);
-  forward.addEventListener('click', nextSong);
   rewind.addEventListener('click', previousSong);
+  forward.addEventListener('click', previousSong);
 });
